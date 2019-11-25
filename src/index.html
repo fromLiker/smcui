@@ -6,9 +6,33 @@
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <!-- style .Site and .Site-content set footer to the bottom -->
+  <style>
+    .Site {
+      display: flex;
+      display: -webkit-flex; /* Safari */
+      min-height: 100vh;
+      flex-direction: column;
+    }
+    .Site-content {
+      flex: 1;
+    }
+    .Footer{
+      text-align:center;
+      font-size: 14px;
+      color: #9da8b9;
+      font-family: Microsoft JhengHei
+    }
+  </style>
 </head>
-<body>
-  <app-root></app-root>
-  <script src="assets/jquery.js"></script>
+<body class="Site">
+  <app-root class="Site-content"></app-root>
 </body>
+<!-- Footer -->
+<footer>
+  <div class="Footer">
+    <span>Copyright © 2019 Liker All Rights Reserved.</span>
+  </div>
+  <br>
+</footer>
 </html>
