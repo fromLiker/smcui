@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'smcui';
+  // 双向数据绑定小例子与app.component.html里的{{titile}}绑定
+  title = 'Stock Market Charting Application';
 }
