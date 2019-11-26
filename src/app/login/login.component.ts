@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { LoginModel } from './loginModel';
+import { Login } from './login';
 
 @Component({
   selector: 'app-login',
@@ -9,9 +9,9 @@ import { LoginModel } from './loginModel';
 })
 export class LoginComponent implements OnInit {
 
-  loginModel: LoginModel = {
-    email: '',
-    password: ''
+  login: Login = {
+    email: 'liker@cn.ibm.com',
+    password: '111111'
   };
 
   constructor(
