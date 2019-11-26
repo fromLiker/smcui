@@ -1,1 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* 这里是你的全局样式。 大多数情况下，你会希望在组件中使用局部样式，以利于维护，
+不过那些会影响你整个应用的样式你还是需要集中存放在这里。 */

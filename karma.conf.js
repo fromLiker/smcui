@@ -1,6 +1,6 @@
 // Karma configuration file, see link for more information
 // https://karma-runner.github.io/1.0/config/configuration-file.html
-
+// 给Karma的单元测试配置，当运行 ng test 时会用到它。
 module.exports = function (config) {
   config.set({
     basePath: '',

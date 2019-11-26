@@ -55,6 +55,10 @@
 /***************************************************************************************************
  * Zone JS is required by default for Angular itself.
  */
+
+// 不同的浏览器对 Web 标准的支持程度也不同。 腻子脚本（polyfill）能把这些不同点进行标准化。
+// 你只要使用 core-js 和 zone.js 通常就够了，不过你也可以查看浏览器支持指南以了解更多信息。
+
 import 'zone.js/dist/zone';  // Included with Angular CLI.
 
 

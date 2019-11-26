@@ -1,3 +1,5 @@
+// 额外的 Linting 配置。当运行 ng lint时，它会供带有 Codelyzer 的 TSLint 使用。 
+// Linting 可以帮你们保持代码风格的一致性。
 {
   "extends": "tslint:recommended",
   "rules": {

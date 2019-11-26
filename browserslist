@@ -4,6 +4,7 @@
 
 # You can see what browsers were selected by your queries by running:
 #   npx browserslist
+# 一个配置文件，用来在不同的前端工具之间共享目标浏览器。
 
 > 0.5%
 last 2 versions
