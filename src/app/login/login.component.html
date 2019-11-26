@@ -1,26 +1,15 @@
-<div class="toolbar" role="banner">   
-  <img
-    width="40"
-    alt="App Logo"
-    src="assets/applogo.ico"
-  />
-  <span>Welcome</span>
-  <div class="spacer"></div>
-  <a title="Sign up" class="signup" [routerLink]="['/signin']">
-    Sign Up
-  </a>
-</div>
-
 <div class="content" role="main">
   <form class="form-signin">
     <h2 class="form-signin-heading">Please sign in</h2>
+    <div><span>id: </span>{{ loginModel.email }}</div>
     <div class="form-group">
       <label for="inputEmail" class="sr-only">Email address</label>
-      <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
+      <input type="email" [(ngModel)]="loginModel.email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
     </div>
+    <div><span>pw: </span>{{ loginModel.password }}</div>
     <div class="form-group">
       <label for="inputPassword" class="sr-only">Password</label>
-      <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+      <input type="password" [(ngModel)]="loginModel.password" id="inputPassword" class="form-control" placeholder="Password" required="">
     </div>    
     <div class="row">
       <div class="col-md-6">    
@@ -37,9 +26,8 @@
       </div>
     </div>
     <br>
-    <button class="btn btn-lg btn-primary btn-block" (click)="userSearch()" type="submit">
+    <button class="btn btn-lg btn-primary btn-block" type="submit">
       Sign in
     </button>
   </form>
-
 </div>
