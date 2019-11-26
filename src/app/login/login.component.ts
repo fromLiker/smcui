@@ -10,8 +10,8 @@ import { Login } from './login';
 export class LoginComponent implements OnInit {
 
   login: Login = {
-    email: 'liker@cn.ibm.com',
-    password: '111111'
+    email: '',
+    password: ''
   };
 
   constructor(
@@ -19,6 +19,9 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.login.email = 'liker@cn.ibm.com';
+    this.login.password = '111111';
+    console.log('id::', this.login.email, 'pw::', this.login.password);
   }
 
 }
