@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit {
     email: '',
     password: ''
   };
+  submitted = false;
 
   constructor(
     private router: Router
@@ -22,6 +23,11 @@ export class LoginComponent implements OnInit {
     this.login.email = 'liker@cn.ibm.com';
     this.login.password = '111111';
     console.log('id::', this.login.email, 'pw::', this.login.password);
+  }
+
+  onSignin() {
+    this.submitted = true;
+    console.log('onSubmit() done!');
   }
 
 }
