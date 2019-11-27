@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Login } from './login';
+import { LoginService } from './login.service';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +17,8 @@ export class LoginComponent implements OnInit {
   submitted = false;
 
   constructor(
-    private router: Router
+    private router: Router,
+    private loginService: LoginService
   ) { }
 
   ngOnInit() {
@@ -28,6 +30,9 @@ export class LoginComponent implements OnInit {
   onSignin() {
     this.submitted = true;
     console.log('onSubmit() done!');
+    this.loginService.findUser(this.login).subscribe(data => {
+      console.log('aaaaa', data);
+    });
   }
 
 }
