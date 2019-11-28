@@ -1,5 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
+import { HttpHeaders } from '@angular/common/http';
+import { GlobalService } from '../utils/global.service';
+import { catchError, retry } from 'rxjs/operators';
 import { Login } from './login';
 import { LocalURL } from '../../global-config';
 
@@ -9,18 +13,24 @@ import { LocalURL } from '../../global-config';
 export class LoginService {
 
     constructor(
-        private http: HttpClient
+        private http: HttpClient,
+        public globalService: GlobalService
     ) { }
 
     readonly loginURL = LocalURL.serverURL + 'login';
 
-    public findUser(loginForm: Login) {
+    // Observable<any> 定义返回类型
+    public findUser(loginForm: Login): Observable<any> {
         console.log('findUser() done!');
         console.log('loginUrl', this.loginURL);
         console.log('loginForm', loginForm);
         console.log('loginForm', loginForm.email);
         console.log('loginForm', loginForm.password);
-        return this.http.post<any>(this.loginURL, loginForm);
+        return this.http.post<any>(this.loginURL, loginForm, this.globalService.httpOptions)
+            .pipe(
+                retry(1), // retry a failed request up to 1 times
+                catchError(this.globalService.handleError)
+            );
     }
 
 }
