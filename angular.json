@@ -25,11 +25,14 @@
             ],
             "styles": [
               "src/styles.css",
-              "./node_modules/bootstrap/dist/css/bootstrap.css"
+              "./node_modules/bootstrap/dist/css/bootstrap.css",
+              "./node_modules/bootstrap4-datetimepicker/build/css/bootstrap-datetimepicker.css"
             ],
             "scripts": [
-              "./node_modules/bootstrap/dist/css/bootstrap.css",
-              "./node_modules/jquery/dist/jquery.js"
+              "./node_modules/jquery/dist/jquery.js",
+              "./node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "./node_modules/moment/min/moment.min.js",
+              "./node_modules/bootstrap4-datetimepicker/src/js/bootstrap-datetimepicker.js"
             ]
           },
           "configurations": {

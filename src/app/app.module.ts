@@ -9,6 +9,8 @@ import { LoginComponent } from './login/login.component';
 import { AdminindexComponent } from './adminindex/adminindex.component';
 import { UserindexComponent } from './userindex/userindex.component';
 import { ErrorpageComponent } from './errorpage/errorpage.component';
+// import { PopoverModule, ModalModule } from 'ngx-bootstrap/';
+// import { httpInterceptorProviders } from './http-interceptors';
 
 // 定义 AppModule，根模块为 Angular 描述如何组装应用。
 @NgModule({
@@ -24,7 +26,10 @@ import { ErrorpageComponent } from './errorpage/errorpage.component';
       HttpClientModule,
       AppRoutingModule,
       FormsModule
+      // ModalModule,
+      // PopoverModule.forRoot()
    ],
+   // httpInterceptorProviders
    providers: [],
    bootstrap: [
       AppComponent
