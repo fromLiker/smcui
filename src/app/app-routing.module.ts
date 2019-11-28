@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
+import { AdminindexComponent } from './adminindex/adminindex.component';
+import { UserindexComponent } from './userindex/userindex.component';
+import { ErrorpageComponent } from './errorpage/errorpage.component';
 
 
 const routes: Routes = [
@@ -13,6 +16,18 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent
+  },
+  {
+    path: 'adminindex',
+    component: AdminindexComponent
+  },
+  {
+    path: 'userindex',
+    component: UserindexComponent
+  },
+  {
+    path: 'errorpage',
+    component: ErrorpageComponent
   }
 ];
 
