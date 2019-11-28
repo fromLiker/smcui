@@ -35,6 +35,11 @@ export class LoginService {
                 retry(1), // retry a failed request up to 1 times
                 catchError(this.handleErrorService.handleError)
             );
+
+        // const id = 1; // memory测试用
+        // return this.http.get<any>(`api/users/${id}`); // memory测试用
+        // // or直接用下面的
+        // return this.http.get<any>('api/users/1'); // memory测试用
     }
 
 }

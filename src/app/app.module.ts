@@ -9,8 +9,8 @@ import { LoginComponent } from './login/login.component';
 import { AdminindexComponent } from './adminindex/adminindex.component';
 import { UserindexComponent } from './userindex/userindex.component';
 import { ErrorpageComponent } from './errorpage/errorpage.component';
-// import { PopoverModule, ModalModule } from 'ngx-bootstrap/';
-// import { httpInterceptorProviders } from './http-interceptors';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './in-memory-data.service';
 
 // 定义 AppModule，根模块为 Angular 描述如何组装应用。
 @NgModule({
@@ -25,11 +25,15 @@ import { ErrorpageComponent } from './errorpage/errorpage.component';
       BrowserModule,
       HttpClientModule,
       AppRoutingModule,
-      FormsModule
-      // ModalModule,
-      // PopoverModule.forRoot()
+      FormsModule,
+      // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
+      // and returns simulated server responses.
+      // Remove it when a real server is ready to receive requests.
+      // a不用memory的时候必须注掉
+      // HttpClientInMemoryWebApiModule.forRoot(
+      //    InMemoryDataService, { dataEncapsulation: false }
+      // )
    ],
-   // httpInterceptorProviders
    providers: [],
    bootstrap: [
       AppComponent

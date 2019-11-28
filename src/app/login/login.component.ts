@@ -40,6 +40,8 @@ export class LoginComponent implements OnInit {
     console.log('onSubmit() done!');
     this.loginService.findUser(this.login).subscribe(
       res => {
+        // console.log('data::', res); // memory测试用
+        // this.redirect(res); // memory测试用
         console.log('data::', res.data);
         this.redirect(res.data);
       }, // success path
