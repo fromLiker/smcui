@@ -18,6 +18,7 @@ export class LoginComponent implements OnInit {
   //   password: ''
   // };
   submitted = false;
+  pageMessage = '';
 
   constructor(
     private router: Router,
@@ -35,23 +36,21 @@ export class LoginComponent implements OnInit {
 
   onSignin() {
     this.submitted = true;
-    // reset page message
-    this.globalService.pageMessage = '';
     console.log('onSubmit() done!');
     this.loginService.findUser(this.login).subscribe(
       res => {
         console.log('data::', res.data);
         this.redirect(res.data);
       }, // success path
-      error => this.globalService.pageMessage = error // error path
+      error => this.pageMessage = error // error path
     );
   }
 
   // direct to different page according to user type(role)
   redirect(data: any) {
     if (data == null) {
-      this.globalService.pageMessage = 'Please signup or recheck your password!';
-      console.log(this.globalService.pageMessage);
+      this.pageMessage = 'Please signup or recheck your password!';
+      console.log(this.pageMessage);
       return;
     }
     this.globalService.userId = data.id;

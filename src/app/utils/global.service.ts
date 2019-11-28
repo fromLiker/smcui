@@ -8,6 +8,15 @@ export class GlobalService {
   public userId: string;
   public userName: string;
   public userRole: string;
-  public pageMessage: string;
+
+  // public userInfo: {
+  //   id: any;
+  //   username: string;
+  //   password: string;
+  //   usertype: string;
+  //   email: string;
+  //   mobile: string;
+  //   confirmed: string;
+  // };
 
 }
