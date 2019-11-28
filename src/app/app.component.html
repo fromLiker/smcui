@@ -11,13 +11,13 @@
     />
     <span>Welcome {{ globalService.userName }}</span>
     <div class="spacer"></div>
-    <a title="signup" *ngIf="globalService.userName==null" class="titlecla" [routerLink]="['signup']">
+    <a title="signup" *ngIf="globalService.userName==''" class="titlecla" [routerLink]="['signup']">
       Sign Up
     </a>
     <a title="setting" *ngIf="globalService.userName?.length" class="titlecla" [routerLink]="['setting']">
       Setting
     </a>
-    <a title="logout" *ngIf="globalService.userName?.length" class="titlecla" (ngSubmit)="onLogout();">
+    <a title="logout" *ngIf="globalService.userName?.length" class="titlecla" (click)="onLogout(globalService.userId)" type="submit">
       Logout
     </a>
   </div>
