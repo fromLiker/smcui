@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 export class GlobalService {
 
   public userId: string;
+  public userName: string;
   public userRole: string;
   public pageMessage: string;
 

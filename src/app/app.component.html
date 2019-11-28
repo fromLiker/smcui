@@ -9,7 +9,7 @@
       alt="App Logo"
       src="assets/applogo.ico"
     />
-    <span>Welcome</span>
+    <span>Welcome {{ globalService.userName }}</span>
     <div class="spacer"></div>
     <a title="signup" class="signup" [routerLink]="['/signup']">
       Sign Up

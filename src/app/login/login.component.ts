@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router } from '@angular/router'; // 路由传参用到
 import { Login } from './login';
 import { LoginService } from './login.service';
 import { GlobalService } from '../utils/global.service';
+// import { ActivatedRoute, Params } from '@angular/router'; // 获取路由传参用到
 
 @Component({
   selector: 'app-login',
@@ -23,6 +24,7 @@ export class LoginComponent implements OnInit {
     private loginService: LoginService,
     // private globalService 时 {{ globalService.pageMessage }} 不识别
     public globalService: GlobalService
+    // private activateInfo: ActivatedRoute
   ) { }
 
   ngOnInit() {
@@ -36,10 +38,13 @@ export class LoginComponent implements OnInit {
     // reset page message
     this.globalService.pageMessage = '';
     console.log('onSubmit() done!');
-    this.loginService.findUser(this.login).subscribe(data => {
-      console.log('data::', data);
-      this.redirect(data);
-    });
+    this.loginService.findUser(this.login).subscribe(
+      res => {
+        console.log('data::', res.data);
+        this.redirect(res.data);
+      }, // success path
+      error => this.globalService.pageMessage = error // error path
+    );
   }
 
   // direct to different page according to user type(role)
@@ -51,6 +56,7 @@ export class LoginComponent implements OnInit {
     }
     this.globalService.userId = data.id;
     this.globalService.userRole = data.usertype;
+    this.globalService.userName = data.username;
     console.log(this.globalService.userId);
     console.log(this.globalService.userRole);
     if ('admin' === data.usertype) {
