@@ -11,7 +11,7 @@
     />
     <span>Welcome {{ globalService.userName }}</span>
     <div class="spacer"></div>
-    <a title="signup" *ngIf="globalService.userName==''" class="titlecla" [routerLink]="['signup']">
+    <a title="signup" *ngIf="globalService.userName==null || globalService.userName==''" class="titlecla" [routerLink]="['signup']">
       Sign Up
     </a>
     <a title="setting" *ngIf="globalService.userName?.length" class="titlecla" [routerLink]="['setting']">

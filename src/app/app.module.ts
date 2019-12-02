@@ -26,6 +26,7 @@ import { InMemoryDataService } from './in-memory-data.service';
       HttpClientModule,
       AppRoutingModule,
       FormsModule,
+      // a测试用
       // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
       // and returns simulated server responses.
       // Remove it when a real server is ready to receive requests.
