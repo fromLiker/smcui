@@ -28,7 +28,7 @@ export class LoginService {
         console.log('findUser() done!');
         console.log('loginUrl', this.loginURL);
         console.log('loginForm', loginForm);
-        console.log('loginForm', loginForm.email);
+        console.log('loginForm', loginForm.username);
         console.log('loginForm', loginForm.password);
         return this.http.post<any>(this.loginURL, loginForm, this.headerService.httpOptions)
             .pipe(

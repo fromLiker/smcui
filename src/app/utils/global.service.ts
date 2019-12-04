@@ -12,7 +12,7 @@ export class GlobalService {
   public userRole: string;
 
   // public userInfo: {
-  //   id: any;
+  //   userid: any;
   //   username: string;
   //   password: string;
   //   usertype: string;
